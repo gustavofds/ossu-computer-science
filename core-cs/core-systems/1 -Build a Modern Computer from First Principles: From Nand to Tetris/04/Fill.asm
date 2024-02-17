@@ -26,17 +26,32 @@ M=0
 @KBD
 A=M
 D=A
+
 @BLACK
 D;JNE
 @color
 M=0
-@LOOP
+@CHECK_PREVIOUS_COLOR
 0;JMP
-(BLACK) // set color to black
+(BLACK)
 @color
 M=-1
 
+(CHECK_PREVIOUS_COLOR)
+@color
+D=M
+@previousColor
+D=D-M
+@START
+D;JEQ
+
 (LOOP)
+  @color
+  D=M
+  @previousColor
+  M=D
+  @color
+  D=M
   @i
   D=M
   @end
