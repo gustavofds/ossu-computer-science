@@ -44,14 +44,12 @@ D=M
 D=D-M
 @START
 D;JEQ
+@color
+D=M
+@previousColor
+M=D
 
 (LOOP)
-  @color
-  D=M
-  @previousColor
-  M=D
-  @color
-  D=M
   @i
   D=M
   @end
