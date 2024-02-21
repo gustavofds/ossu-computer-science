@@ -11,18 +11,18 @@
 // 'white' in every pixel;
 // the screen should remain fully clear as long as no key is pressed.
 
+@8191
+D=A
+@SCREEN
+D=D+A
+@end
+M=D
+
 (START)
 @SCREEN
 D=A
-@addr
-M=D
-@8191
-D=A
-@end
-M=D
 @i
-M=0
-
+M=D
 @KBD
 A=M
 D=A
@@ -57,16 +57,13 @@ M=D
   @START
   D;JGT
 
-
   @color
   D=M
-  @addr
+  @i
   A=M
   M=D
 
   @i
-  M=M+1
-  @addr
   M=M+1
   @LOOP
   0;JMP
